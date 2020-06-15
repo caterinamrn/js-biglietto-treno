@@ -15,19 +15,22 @@
 // richiedo all'utente il numero di km da percorrere e l'età
   var km = parseInt( prompt (" Buongiono utente, quanti chilometri devi percorrere ? ") );
   var eta = parseInt( prompt(" inserire la propria età ") );
-  console.log(km,eta);
+  // console.log(km,eta);
 // calcolo il prezzo del biglietto in base ai chilometri
   prezzoStandard = 0.21 * km;
-  console.log(prezzoStandard);
+  prezzoStandardDecimale = prezzoStandard.toFixed(2);
+  // console.log(prezzoStandard);
 // se l'utente è minorenne applico lo sconto del 20%
   if (eta < 18 ) {
     sconto = prezzoStandard * 20 / 100;
+    document.getElementById('sconto').innerHTML = "essendo l'utente minorenne è stato applicato uno sconto del 20% sul prezzo calcolato con la tariffa standard di " + prezzoStandardDecimale + " €";
   }
 // se l'utente è over 65 applico lo sconto del 60%
   else if (eta > 65) {
     sconto = prezzoStandard * 60 / 100;
+    document.getElementById('sconto').innerHTML = "poichè l'utente ha un'età maggiore di 65 anni è stato applicato uno sconto del 60% sul prezzo calcolato con la tariffa standard di " + prezzoStandardDecimale + " €";
   }
-  console.log(sconto);
+  // console.log(sconto);
 
   prezzo = prezzoStandard - sconto;
   var prezzoFinale = prezzo.toFixed(2);
