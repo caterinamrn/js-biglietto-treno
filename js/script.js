@@ -28,8 +28,9 @@
     sconto = prezzoStandard * 60 / 100;
   }
   console.log(sconto);
-  
+
   prezzo = prezzoStandard - sconto;
+  var prezzoFinale = prezzo.toFixed(2);
 
 // output con il prezzo finale del biglietto tenendo conto del numero di cifre decimali appropriato
-document.getElementById('prezzo_biglietto').innerHTML = "il prezzo del bigletto è di: " + prezzo + " €";
+document.getElementById('prezzo_biglietto').innerHTML = "il prezzo del bigletto è di: " + prezzoFinale + " €";
